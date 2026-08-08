@@ -3,7 +3,7 @@ import React from 'react'
 import ThemeBtn from './ThemeBtn';
 function Navbar() {
   return (
-    <nav className="flex items-center bg-gray-500 pt-2 pb-2 pl-5 pr-5 text-white justify-between">
+    <nav className="flex items-center bg-[#141414] pt-2 pb-2 pl-5 pr-5 text-[#FFFFFF] justify-between">
       
       <a href="#home" className="flex flex-col gap-[2px]">
         <span className="text-lg font-bold leading-none">
