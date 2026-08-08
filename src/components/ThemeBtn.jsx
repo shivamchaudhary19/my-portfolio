@@ -1,9 +1,9 @@
 import { FiSun, FiMoon } from "react-icons/fi";
-import useTheme from "../contexts/theme";
+import useTheme from "../contexts/theme.jsx";
 
 export default function ThemeBtn() {
   const { themeMode, lightTheme, darkTheme } = useTheme();
-
+  console.log(themeMode);
   const toggleTheme = () => {
     if (themeMode === "light") {
       darkTheme();
