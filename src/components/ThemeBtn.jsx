@@ -3,42 +3,48 @@ import useTheme from "../contexts/theme.jsx";
 
 export default function ThemeBtn() {
   const { themeMode, lightTheme, darkTheme } = useTheme();
-  console.log(themeMode);
+
   const toggleTheme = () => {
-    if (themeMode === "light") {
-      darkTheme();
-    } else {
+    if (themeMode === "dark") {
       lightTheme();
+    } else {
+      darkTheme();
     }
   };
 
   return (
     <button
       onClick={toggleTheme}
-      aria-label="Toggle Theme"
-      className="
+      aria-label={
+        themeMode === "dark"
+          ? "Switch to light mode"
+          : "Switch to dark mode"
+      }
+      className={`
+        group
         flex items-center justify-center
         w-11 h-11
         rounded-full
-        transition-all duration-300
-        bg-gray-200
-        hover:bg-gray-300
-        dark:bg-gray-800
-        dark:hover:bg-gray-700
         shadow-md
+        transition-all duration-300
         hover:scale-105
         active:scale-95
-      "
+        ${
+          themeMode === "dark"
+            ? "bg-black hover:bg-gray-600"
+            : "bg-white hover:bg-gray-200"
+        }
+      `}
     >
-      {themeMode === "light" ? (
-        <FiMoon
-          size={20}
-          className="text-slate-700 transition-transform duration-300"
-        />
-      ) : (
+      {themeMode === "dark" ? (
         <FiSun
           size={20}
-          className="text-yellow-400 transition-transform duration-300 rotate-180"
+          className="text-yellow-400 transition-transform duration-500 ease-in-out group-hover:rotate-90"
+        />
+      ) : (
+        <FiMoon
+          size={20}
+          className="text-slate-700 transition-transform duration-500 ease-in-out group-hover:rotate-180"
         />
       )}
     </button>

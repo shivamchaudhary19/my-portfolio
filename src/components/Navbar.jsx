@@ -3,14 +3,14 @@ import React from 'react'
 import ThemeBtn from './ThemeBtn';
 function Navbar() {
   return (
-    <nav className="flex items-center bg-[#141414] pt-2 pb-2 pl-5 pr-5 text-[#FFFFFF] justify-between">
+    <nav className="flex items-center h-16 text-[#FFFFFF] bg-[#141414] pt-2 pb-2 pl-5 pr-5 justify-between">
       
       <a href="#home" className="flex flex-col gap-[2px]">
-        <span className="text-lg font-bold leading-none">
+        <span className="text-lg text-[#FFFFFF] font-bold leading-none">
           SHIVAM
         </span>
 
-        <span className="text-xs font-medium leading-none tracking-[0.2em]">
+        <span className="text-xs text-[#fafafa] font-medium leading-none tracking-[0.2em]">
           CHAUDHARY
         </span>
       </a>
