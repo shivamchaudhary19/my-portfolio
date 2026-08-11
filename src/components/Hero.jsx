@@ -168,8 +168,7 @@ useEffect(() => {
                 className="
                   block
                   transition-transform
-                  duration-300
-                  ease-[cubic-bezier(0.76,0,0.24,1)]
+                  duration-200
                   group-hover:translate-y-full
                 "
               >
@@ -183,8 +182,7 @@ useEffect(() => {
                   bottom-full
                   block
                   transition-transform
-                  duration-300
-                  ease-[cubic-bezier(0.76,0,0.24,1)]
+                  duration-200
                   group-hover:translate-y-full
                 "
               >
