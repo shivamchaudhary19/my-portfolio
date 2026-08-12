@@ -1,20 +1,20 @@
 import React from "react";
+import WeatherImg from "../assets/weather.png";
+import NoisyImg from "../assets/noisy.png";
+import VeloraImg from "../assets/velora.png";
+import PortfolioImg from "../assets/portfolio.png";
 
 const projects = [
   {
     number: "01",
     name: "WEATHER",
+    image: WeatherImg,
     type: "APP",
     tagline: "LIVE WEATHER. ZERO GUESSWORK.",
     tech: "JAVASCRIPT · API",
     live: "https://shivamchaudhary19.github.io/weather-app/",
     github: "https://github.com/shivamchaudhary19/weather-app",
 
-    // Medium:
-    // Weather = left column, full 2 rows
-    //
-    // Desktop:
-    // Weather = first 2 columns, first row
     grid:
       "md:col-start-1 md:row-start-1 md:row-span-2 lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-1",
   },
@@ -22,17 +22,13 @@ const projects = [
   {
     number: "02",
     name: "NOISY",
+    image: NoisyImg,
     type: "HEADPHONES",
     tagline: "SOUND, WITHOUT THE NOISE.",
     tech: "HTML · CSS · JAVASCRIPT",
     live: "https://noisy-eight.vercel.app/",
     github: "https://github.com/shivamchaudhary19/noisy-headphones",
 
-    // Medium:
-    // Noisy = middle column, first row
-    //
-    // Desktop:
-    // Noisy = third column, first row
     grid:
       "md:col-start-2 md:row-start-1 lg:col-start-3 lg:row-start-1",
   },
@@ -40,17 +36,13 @@ const projects = [
   {
     number: "03",
     name: "VELORA",
+    image: VeloraImg,
     type: "SNEAKERS",
     tagline: "MADE TO MOVE.",
     tech: "HTML · CSS · JAVASCRIPT",
     live: "https://shivamchaudhary19.github.io/sneakers-landing-page/",
     github: "https://github.com/shivamchaudhary19/sneakers-landing-page",
 
-    // Medium:
-    // Velora = third column, first row
-    //
-    // Desktop:
-    // Velora = first column, second row
     grid:
       "md:col-start-3 md:row-start-1 lg:col-start-1 lg:row-start-2",
   },
@@ -58,17 +50,13 @@ const projects = [
   {
     number: "04",
     name: "SHIVAM",
+    image: PortfolioImg,
     type: "PORTFOLIO",
     tagline: "THE SITE YOU'RE STANDING ON.",
     tech: "REACT · TAILWIND CSS",
     live: null,
     github: "https://github.com/shivamchaudhary19/my-portfolio",
 
-    // Medium:
-    // Portfolio = columns 2-3, second row
-    
-    // Desktop:
-    // Portfolio = columns 2-3, second row
     grid:
       "md:col-start-2 md:col-span-2 md:row-start-2 lg:col-start-2 lg:col-span-2 lg:row-start-2",
   },
@@ -85,10 +73,8 @@ function Projects() {
         px-6
         py-28
         text-black
-
         sm:px-10
         lg:px-16
-
         dark:bg-black
         dark:text-white
       "
@@ -98,9 +84,6 @@ function Projects() {
         {/* SECTION HEADER */}
 
         <div className="mb-16">
-
-          {/* Small label */}
-
           <div
             className="
               mb-6
@@ -110,7 +93,6 @@ function Projects() {
               text-xs
               tracking-[0.3em]
               text-black/50
-
               dark:text-white/50
             "
           >
@@ -119,31 +101,23 @@ function Projects() {
                 h-px
                 w-8
                 bg-black/60
-
                 dark:bg-white/60
               "
             />
 
-            <span>
-              SELECTED WORK / 2025—26
-            </span>
+            <span>SELECTED WORK / 2025—26</span>
           </div>
-
-
-          {/* Heading + description */}
 
           <div
             className="
               flex
               flex-col
               gap-8
-
               md:flex-row
               md:items-end
               md:justify-between
             "
           >
-
             <h2
               className="
                 font-display
@@ -157,25 +131,20 @@ function Projects() {
               PROJECTS
             </h2>
 
-
             <p
               className="
                 max-w-sm
                 text-sm
                 leading-6
                 text-black/50
-
                 md:mb-2
-
                 dark:text-white/50
               "
             >
               Things I've built, broken & shipped.
             </p>
-
           </div>
         </div>
-
 
         {/* PROJECT GRID */}
 
@@ -184,29 +153,23 @@ function Projects() {
             grid
             grid-cols-1
             gap-5
-
             md:grid-cols-3
             md:grid-rows-[360px_360px]
-
             lg:grid-cols-3
             lg:grid-rows-[360px_360px]
           "
         >
-
           {projects.map((project) => (
             <ProjectCard
               key={project.number}
               project={project}
             />
           ))}
-
         </div>
-
 
         {/* VIEW ALL PROJECTS */}
 
         <div className="mt-20 flex justify-center">
-
           <button
             type="button"
             className="
@@ -221,31 +184,22 @@ function Projects() {
               tracking-[0.2em]
               transition-all
               duration-300
-
               hover:border-black
-
               dark:border-white/25
               dark:hover:border-white
             "
           >
-
-            {/* Visible text */}
-
             <span
               className="
                 block
                 transition-transform
                 duration-500
                 ease-[cubic-bezier(0.76,0,0.24,1)]
-
                 group-hover:-translate-y-full
               "
             >
               VIEW ALL PROJECTS ↗
             </span>
-
-
-            {/* Hover copy */}
 
             <span
               className="
@@ -258,17 +212,13 @@ function Projects() {
                 transition-transform
                 duration-500
                 ease-[cubic-bezier(0.76,0,0.24,1)]
-
                 group-hover:-translate-y-full
               "
             >
               VIEW ALL PROJECTS ↗
             </span>
-
           </button>
-
         </div>
-
       </div>
     </section>
   );
@@ -287,27 +237,23 @@ function ProjectCard({ project }) {
         ${project.grid}
       `}
     >
-
       <div
         className="
           flex
-          h-full
+          h-auto
           min-h-0
           flex-col
           overflow-hidden
-
           border
           border-black/15
           bg-white
-
           transition-all
           duration-500
-
           group-hover:border-black/40
-
           dark:border-white/15
           dark:bg-[#080808]
           dark:group-hover:border-white/40
+          md:h-full
         "
       >
 
@@ -316,58 +262,60 @@ function ProjectCard({ project }) {
         <div
           className="
             relative
-            min-h-0
-            flex-1
+            h-[240px]
+            w-full
+            shrink-0
             overflow-hidden
-
             bg-black/[0.02]
-
             dark:bg-white/[0.02]
+
+            sm:h-[280px]
+
+            md:h-auto
+            md:min-h-0
+            md:flex-1
           "
         >
-
-          {/* Large background project name */}
+          {/* PROJECT IMAGE */}
 
           <div
             className="
               absolute
               inset-0
-              flex
-              items-center
-              justify-center
               overflow-hidden
             "
           >
-            <span
+            <img
+              src={project.image}
+              alt={`${project.name} project preview`}
               className="
-                select-none
-                whitespace-nowrap
-                font-display
-                text-[clamp(4rem,8vw,9rem)]
-                font-black
-                uppercase
-                leading-none
-                tracking-tight
-
-                text-black/[0.06]
-
-                transition-all
+                h-full
+                w-full
+                object-cover
+                transition-transform
                 duration-700
                 ease-out
-
                 group-hover:scale-105
-                group-hover:text-black/[0.11]
-
-                dark:text-white/[0.07]
-                dark:group-hover:text-white/[0.13]
               "
-            >
-              {project.name}
-            </span>
+            />
+
+            {/* Overlay */}
+
+            <div
+              className="
+                absolute
+                inset-0
+                bg-black/20
+                transition-opacity
+                duration-500
+                group-hover:bg-black/10
+                dark:bg-black/30
+              "
+            />
           </div>
 
 
-          {/* Project number */}
+          {/* PROJECT NUMBER */}
 
           <span
             className="
@@ -375,14 +323,11 @@ function ProjectCard({ project }) {
               left-5
               top-5
               z-20
-
               font-display
               text-sm
               font-bold
               tracking-wider
-
               text-black/60
-
               dark:text-white/70
             "
           >
@@ -390,7 +335,7 @@ function ProjectCard({ project }) {
           </span>
 
 
-          {/* Live project arrow */}
+          {/* LIVE PROJECT ARROW */}
 
           {project.live && (
             <a
@@ -403,27 +348,21 @@ function ProjectCard({ project }) {
                 right-5
                 top-5
                 z-20
-
                 flex
                 h-10
                 w-10
                 items-center
                 justify-center
-
                 rounded-full
                 border
                 border-black/20
-
                 text-lg
                 text-black/60
-
                 transition-all
                 duration-300
-
                 hover:border-black
                 hover:bg-black
                 hover:text-white
-
                 dark:border-white/20
                 dark:text-white/70
                 dark:hover:border-white
@@ -436,25 +375,21 @@ function ProjectCard({ project }) {
           )}
 
 
-          {/* Project type */}
+          {/* PROJECT TYPE */}
 
           <span
             className="
               absolute
               bottom-5
               left-5
-
+              z-20
               text-[9px]
               tracking-[0.35em]
-
-              text-black/35
-
-              dark:text-white/30
+              text-white/80
             "
           >
             {project.type}
           </span>
-
         </div>
 
 
@@ -466,27 +401,20 @@ function ProjectCard({ project }) {
             border-t
             border-black/10
             p-5
-
             dark:border-white/10
           "
         >
-
           <div
             className="
               flex
               flex-col
               gap-3
-
               sm:flex-row
               sm:items-start
               sm:justify-between
             "
           >
-
-            {/* Project name */}
-
             <div>
-
               <h3
                 className="
                   font-display
@@ -509,37 +437,28 @@ function ProjectCard({ project }) {
                   uppercase
                   leading-none
                   tracking-wide
-
                   text-black/35
-
                   dark:text-white/35
                 "
               >
                 {project.type}
               </p>
-
             </div>
-
-
-            {/* Tech */}
 
             <span
               className="
                 text-[9px]
                 tracking-[0.15em]
-
                 text-black/35
-
                 dark:text-white/35
               "
             >
               {project.tech}
             </span>
-
           </div>
 
 
-          {/* Tagline */}
+          {/* TAGLINE */}
 
           <p
             className="
@@ -547,9 +466,7 @@ function ProjectCard({ project }) {
               text-sm
               font-semibold
               tracking-wide
-
               text-black/75
-
               dark:text-white/80
             "
           >
@@ -557,7 +474,7 @@ function ProjectCard({ project }) {
           </p>
 
 
-          {/* Links */}
+          {/* LINKS */}
 
           <div
             className="
@@ -567,9 +484,6 @@ function ProjectCard({ project }) {
               gap-6
             "
           >
-
-            {/* Live */}
-
             {project.live ? (
               <a
                 href={project.live}
@@ -579,14 +493,10 @@ function ProjectCard({ project }) {
                   text-[10px]
                   font-bold
                   tracking-[0.2em]
-
                   text-black/55
-
                   transition-colors
                   duration-300
-
                   hover:text-black
-
                   dark:text-white/60
                   dark:hover:text-white
                 "
@@ -599,18 +509,13 @@ function ProjectCard({ project }) {
                   text-[10px]
                   font-bold
                   tracking-[0.2em]
-
                   text-black/30
-
                   dark:text-white/30
                 "
               >
                 LIVE SOON
               </span>
             )}
-
-
-            {/* GitHub */}
 
             <a
               href={project.github}
@@ -620,27 +525,20 @@ function ProjectCard({ project }) {
                 text-[10px]
                 font-bold
                 tracking-[0.2em]
-
                 text-black/55
-
                 transition-colors
                 duration-300
-
                 hover:text-black
-
                 dark:text-white/60
                 dark:hover:text-white
               "
             >
               GITHUB ↗
             </a>
-
           </div>
-
         </div>
 
       </div>
-
     </article>
   );
 }
