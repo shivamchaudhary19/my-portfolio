@@ -12,12 +12,15 @@ function About() {
       className="
         relative
         overflow-hidden
-        bg-black
+        bg-white
         px-6
         py-24
-        text-white
+        text-black
         sm:px-10
         lg:px-16
+
+        dark:bg-black
+        dark:text-white
       "
     >
       {/* Decorative vertical text */}
@@ -32,8 +35,10 @@ function About() {
           rotate-[-90deg]
           text-[10px]
           tracking-[0.5em]
-          text-white/50
+          text-black/50
           lg:block
+
+          dark:text-white/50
         "
       >
         ABOUT ME
@@ -42,11 +47,40 @@ function About() {
       {/* Main container */}
       <div className="mx-auto max-w-[1400px]">
 
+        <div
+          className="
+            mb-10
+            flex
+            items-center
+            gap-3
+            text-xs
+            tracking-[0.3em]
+            text-black/60
 
-        <div className="mb-10 flex items-center gap-3 text-xs tracking-[0.3em] text-white/60">
-          <span className="h-px w-8 bg-white/60"></span>
+            dark:text-white/60
+          "
+        >
+          <span
+            className="
+              h-px
+              w-8
+              bg-black/60
+
+              dark:bg-white/60
+            "
+          ></span>
+
           <span>ABOUT</span>
-          <span className="h-px w-8 bg-white/60"></span>
+
+          <span
+            className="
+              h-px
+              w-8
+              bg-black/60
+
+              dark:bg-white/60
+            "
+          ></span>
         </div>
 
 
@@ -60,7 +94,7 @@ function About() {
           "
         >
 
-          {/* ===== LEFT CONTENT ===== */}
+          {/* LEFT CONTENT */}
 
           <div className="relative">
 
@@ -75,11 +109,13 @@ function About() {
                 font-display
                 text-[10rem]
                 leading-none
-                text-white/[0.035]
+                text-black/[0.035]
                 sm:text-[14rem]
                 lg:-right-8
                 lg:-top-20
                 lg:text-[17rem]
+
+                dark:text-white/[0.035]
               "
             >
               01
@@ -107,7 +143,16 @@ function About() {
 
 
             {/* Divider */}
-            <div className="my-8 h-px w-20 bg-white/60"></div>
+            <div
+              className="
+                my-8
+                h-px
+                w-20
+                bg-black/60
+
+                dark:bg-white/60
+              "
+            ></div>
 
 
             {/* Strong opening */}
@@ -133,8 +178,10 @@ function About() {
                 space-y-5
                 text-sm
                 leading-7
-                text-white/60
+                text-black/60
                 sm:text-base
+
+                dark:text-white/60
               "
             >
               <p>
@@ -146,8 +193,17 @@ function About() {
               <p>
                 I learn by building, not by hoarding solved counts. Every
                 problem gets understood before it gets solved — no rushing
-                past the <span className="text-white">"why."</span> Days are
-                for building. Bugs are part of the process, not an
+                past the{" "}
+                <span
+                  className="
+                    text-black
+
+                    dark:text-white
+                  "
+                >
+                  "why."
+                </span>{" "}
+                Days are for building. Bugs are part of the process, not an
                 interruption to it.
               </p>
             </div>
@@ -169,14 +225,33 @@ function About() {
 
 
             {/* Closing */}
-            <div className="mt-7 max-w-2xl space-y-5 text-sm leading-7 text-white/60 sm:text-base">
+            <div
+              className="
+                mt-7
+                max-w-2xl
+                space-y-5
+                text-sm
+                leading-7
+                text-black/60
+                sm:text-base
+
+                dark:text-white/60
+              "
+            >
               <p>
                 I'm not chasing a finish line. I'm building momentum that
                 compounds — one project, one problem, one improvement at a
                 time.
               </p>
 
-              <p className="font-semibold text-white">
+              <p
+                className="
+                  font-semibold
+                  text-black
+
+                  dark:text-white
+                "
+              >
                 This isn't a phase. This is just how I move.
               </p>
             </div>
@@ -184,9 +259,17 @@ function About() {
           </div>
 
 
-          {/* ===== RIGHT IMAGE ===== */}
+          {/* RIGHT IMAGE */}
 
-          <div className="relative flex items-center justify-center lg:justify-end">
+          <div
+            className="
+              relative
+              flex
+              items-center
+              justify-center
+              lg:justify-end
+            "
+          >
 
             {/* Image number / decorative text */}
             <div
@@ -199,8 +282,10 @@ function About() {
                 rotate-90
                 text-[10px]
                 tracking-[0.5em]
-                text-white/40
+                text-black/40
                 xl:block
+
+                dark:text-white/40
               "
             >
               BUILD &nbsp; › &nbsp; BREAK &nbsp; › &nbsp; IMPROVE
@@ -214,10 +299,12 @@ function About() {
                 w-full
                 max-w-[520px]
                 border
-                border-white/20
+                border-black/20
                 p-3
                 sm:p-4
                 lg:max-w-[500px]
+
+                dark:border-white/20
               "
             >
 
@@ -231,9 +318,12 @@ function About() {
                   w-10
                   border-r
                   border-t
-                  border-white/70
+                  border-black/70
+
+                  dark:border-white/70
                 "
               ></span>
+
 
               {/* Corner decoration - bottom left */}
               <span
@@ -245,16 +335,27 @@ function About() {
                   w-10
                   border-b
                   border-l
-                  border-white/70
+                  border-black/70
+
+                  dark:border-white/70
                 "
               ></span>
 
 
               {/* Image */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-zinc-950">
+              <div
+                className="
+                  relative
+                  aspect-[3/4]
+                  overflow-hidden
+                  bg-zinc-100
+
+                  dark:bg-zinc-950
+                "
+              >
 
                 <ImageSlideshow
-                  images={[Me, Me2, Me3]}
+                  images={[Me, Me1, Me2, Me3]}
                   interval={3000}
                 />
 
@@ -265,11 +366,14 @@ function About() {
                     absolute
                     inset-0
                     bg-gradient-to-t
-                    from-black/60
+                    from-black/20
                     via-transparent
                     to-transparent
+
+                    dark:from-black/60
                   "
-                />
+                ></div>
+
 
                 {/* Small image label */}
                 <div
@@ -279,7 +383,7 @@ function About() {
                     left-5
                     text-[10px]
                     tracking-[0.3em]
-                    text-white/70
+                    text-white/80
                   "
                 >
                   SHIVAM CHAUDHARY
@@ -292,7 +396,7 @@ function About() {
         </div>
 
 
-        {/* ================= LOWER GRID ================= */}
+        {/* LOWER GRID */}
 
         <div
           className="
@@ -300,21 +404,25 @@ function About() {
             grid
             grid-cols-1
             border-t
-            border-white/15
+            border-black/15
             md:grid-cols-3
+
+            dark:border-white/15
           "
         >
 
-          {/* ===== HOW I THINK ===== */}
+          {/* HOW I THINK */}
 
           <div
             className="
               border-b
-              border-white/15
+              border-black/15
               py-10
               md:border-b-0
               md:border-r
               md:pr-10
+
+              dark:border-white/15
             "
           >
 
@@ -344,16 +452,18 @@ function About() {
           </div>
 
 
-          {/* ===== CURRENTLY ===== */}
+          {/* CURRENTLY */}
 
           <div
             className="
               border-b
-              border-white/15
+              border-black/15
               py-10
               md:border-b-0
               md:border-r
               md:px-10
+
+              dark:border-white/15
             "
           >
 
@@ -383,7 +493,7 @@ function About() {
           </div>
 
 
-          {/* ===== TECH ===== */}
+          {/* TECH */}
 
           <div className="py-10 md:pl-10">
 
@@ -395,8 +505,6 @@ function About() {
                 "JavaScript",
                 "React",
                 "Tailwind CSS",
-                "Node.js",
-                "MongoDB",
                 "Git & GitHub",
                 "HTML",
                 "CSS",
@@ -406,16 +514,23 @@ function About() {
                   key={tech}
                   className="
                     border
-                    border-white/20
+                    border-black/20
                     px-4
                     py-2
                     text-xs
                     tracking-wide
-                    text-white/70
+                    text-black/70
+
                     transition-all
                     duration-300
-                    hover:border-white/60
-                    hover:text-white
+
+                    hover:border-black/60
+                    hover:text-black
+
+                    dark:border-white/20
+                    dark:text-white/70
+                    dark:hover:border-white/60
+                    dark:hover:text-white
                   "
                 >
                   {tech}
@@ -433,12 +548,23 @@ function About() {
 }
 
 
-/* ================= REUSABLE COMPONENTS ================= */
+/* =================================================
+   REUSABLE COMPONENTS
+================================================= */
 
 function SectionTitle({ title }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="h-px w-6 bg-white/60"></span>
+
+      <span
+        className="
+          h-px
+          w-6
+          bg-black/60
+
+          dark:bg-white/60
+        "
+      ></span>
 
       <h3
         className="
@@ -450,6 +576,7 @@ function SectionTitle({ title }) {
       >
         {title}
       </h3>
+
     </div>
   );
 }
@@ -465,13 +592,13 @@ function ThinkItem({ number, title, text }) {
           text-3xl
           font-bold
           leading-none
-          text-white
         "
       >
         {number}
       </span>
 
       <div>
+
         <h4
           className="
             text-sm
@@ -482,9 +609,19 @@ function ThinkItem({ number, title, text }) {
           {title}
         </h4>
 
-        <p className="mt-2 text-sm leading-6 text-white/50">
+        <p
+          className="
+            mt-2
+            text-sm
+            leading-6
+            text-black/50
+
+            dark:text-white/50
+          "
+        >
           {text}
         </p>
+
       </div>
 
     </div>
@@ -505,13 +642,16 @@ function CurrentItem({ symbol, title, text }) {
           items-center
           justify-center
           text-lg
-          text-white/80
+          text-black/80
+
+          dark:text-white/80
         "
       >
         {symbol}
       </span>
 
       <div>
+
         <h4
           className="
             text-sm
@@ -522,9 +662,19 @@ function CurrentItem({ symbol, title, text }) {
           {title}
         </h4>
 
-        <p className="mt-1 text-sm leading-6 text-white/50">
+        <p
+          className="
+            mt-1
+            text-sm
+            leading-6
+            text-black/50
+
+            dark:text-white/50
+          "
+        >
           {text}
         </p>
+
       </div>
 
     </div>
