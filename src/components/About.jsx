@@ -548,10 +548,6 @@ function About() {
 }
 
 
-/* =================================================
-   REUSABLE COMPONENTS
-================================================= */
-
 function SectionTitle({ title }) {
   return (
     <div className="flex items-center gap-3">

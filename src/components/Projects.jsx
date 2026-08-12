@@ -66,7 +66,7 @@ const projects = [
 
     // Medium:
     // Portfolio = columns 2-3, second row
-    //
+    
     // Desktop:
     // Portfolio = columns 2-3, second row
     grid:
@@ -95,9 +95,7 @@ function Projects() {
     >
       <div className="mx-auto max-w-[1400px]">
 
-        {/* =========================================
-            SECTION HEADER
-        ========================================== */}
+        {/* SECTION HEADER */}
 
         <div className="mb-16">
 
@@ -179,9 +177,7 @@ function Projects() {
         </div>
 
 
-        {/* =========================================
-            PROJECT GRID
-        ========================================== */}
+        {/* PROJECT GRID */}
 
         <div
           className="
@@ -207,9 +203,7 @@ function Projects() {
         </div>
 
 
-        {/* =========================================
-            VIEW ALL PROJECTS
-        ========================================== */}
+        {/* VIEW ALL PROJECTS */}
 
         <div className="mt-20 flex justify-center">
 
@@ -281,9 +275,7 @@ function Projects() {
 }
 
 
-/* =================================================
-   PROJECT CARD
-================================================= */
+/* PROJECT CARD */
 
 function ProjectCard({ project }) {
   return (
@@ -319,9 +311,7 @@ function ProjectCard({ project }) {
         "
       >
 
-        {/* =========================================
-            VISUAL AREA
-        ========================================== */}
+        {/* VISUAL AREA */}
 
         <div
           className="
@@ -468,9 +458,7 @@ function ProjectCard({ project }) {
         </div>
 
 
-        {/* =========================================
-            PROJECT INFORMATION
-        ========================================== */}
+        {/* PROJECT INFORMATION */}
 
         <div
           className="
