@@ -7,6 +7,7 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import ThemeBtn from './components/ThemeBtn'
 import Hero from './components/Hero'
+import Journey from './components/Journey'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <About />
       <Projects />
       <Skills />
+      <Journey />
       <Contact />
       <Footer />
     </>

@@ -134,7 +134,7 @@ function Skills() {
             className="
               pointer-events-none
               absolute
-              left-5
+              left-9
               top-1/2
               hidden
               -translate-x-1/2
