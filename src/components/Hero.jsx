@@ -7,100 +7,143 @@ import { useEffect, useRef } from "react";
 function Hero() {
 
   const heroRef = useRef(null);
-const heroContentRef = useRef(null);
+  const heroContentRef = useRef(null);
 
 
-//Scroll triggered animation 
+  //Scroll triggered animation
 
-useEffect(() => {
-  const handleScroll = () => {
-    const hero = heroRef.current;
-    const content = heroContentRef.current;
+  useEffect(() => {
+    const handleScroll = () => {
+      const hero = heroRef.current;
+      const content = heroContentRef.current;
 
-    if (!hero || !content) return;
+      if (!hero || !content) return;
 
-    const scrollY = window.scrollY;
-    const heroHeight = hero.offsetHeight;
+      const isMobile = window.innerWidth < 768;
 
-    const progress = Math.min(
-      Math.max(scrollY / heroHeight, 0),
-      1
-    );
+      const scrollY = window.scrollY;
+      const heroHeight = hero.offsetHeight;
 
-    const scale = 1 - progress * 0.06;
-    const translateY = -progress * 40;
+      const progress = Math.min(
+        Math.max(scrollY / heroHeight, 0),
+        1
+      );
 
-    content.style.transform = `
-      translateY(${translateY}px)
-      scale(${scale})
-    `;
-  };
+      // Subtler effect on mobile so the hero doesn't visually collapse while scrolling
+      const scale = isMobile ? 1 - progress * 0.015 : 1 - progress * 0.06;
+      const translateY = isMobile ? -progress * 10 : -progress * 40;
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
+      content.style.transform = `
+        translateY(${translateY}px)
+        scale(${scale})
+      `;
+    };
 
-  handleScroll();
+    handleScroll();
 
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   return (
-    
+
     <section
       ref={heroRef}
       id="home"
-      className="relative h-[calc(100vh-4rem)] overflow-hidden bg-black text-white"
+      className="
+        relative
+        min-h-screen
+        md:h-[calc(100vh-4rem)]
+        overflow-hidden
+        bg-white
+        text-black
+        dark:bg-black
+        dark:text-white
+        md:bg-black
+        md:text-white
+      "
     >
 
       <div
         ref={heroContentRef}
-        className="h-full w-full"
+        className="
+          flex
+          flex-col
+          items-start
+          gap-10
+          px-6
+          py-14
+          w-full
+          md:block
+          md:h-full
+          md:w-full
+          md:px-0
+          md:py-0
+          md:gap-0
+        "
       >
-        <h1
-          className="
-            absolute
-            top-[8%]
-            left-1/2
+        <h1 className="
+            order-1
+            md:absolute
+            md:top-[8%]
+            md:left-1/2
+            md:-translate-x-1/2
             z-10
-            -translate-x-1/2
             font-display
-            tracking-widest
+            tracking-[0.05em]
+            md:tracking-widest
             whitespace-nowrap
-            text-[clamp(8rem,23vw,24rem)]
+            text-[clamp(5rem,27vw,7rem)]
+            md:text-[clamp(8rem,23vw,24rem)]
             font-black
             leading-none
-            
-          "
-        >
-          SHIVAM
-        </h1>
+            text-transparent
+            [-webkit-text-stroke:1.5px_black]
+            dark:[-webkit-text-stroke:1.5px_white]
+            md:text-white
+            md:[-webkit-text-stroke:0px_transparent]
+          ">SHIVAM</h1>
 
 
         <img
-          src= {Me}
+          src={Me}
           alt="Shivam Chaudhary"
           className="
-            absolute
-            bottom-0
-            left-[70%]
-            z-20
-
-            h-full
+            order-2
+            relative
+            mx-auto
+            h-[46vh]
+            max-h-[380px]
             w-auto
-            max-w-none
-            -translate-x-1/2
-
             object-contain
-            object-bottom
+            object-top
+            z-20
+            md:absolute
+            md:bottom-0
+            md:left-[70%]
+            md:top-auto
+            md:mx-0
+            md:h-full
+            md:max-h-none
+            md:w-auto
+            md:max-w-none
+            md:-translate-x-1/2
+            md:object-bottom
           "
         />
 
         <h2
           className="
-            absolute
-            left-[10%]
-            top-[48%]
+            hidden
+            md:block
+            md:absolute
+            md:left-[10%]
+            md:top-[48%]
             z-30
             font-display
             whitespace-nowrap
@@ -117,11 +160,13 @@ useEffect(() => {
 
         <div
           className="
-            absolute
-            bottom-[10%]
-            left-[10%]
+            order-3
+            md:absolute
+            md:bottom-[10%]
+            md:left-[10%]
             z-30
 
+            w-full
             max-w-xl
           "
         >
@@ -141,7 +186,9 @@ useEffect(() => {
               max-w-lg
               text-lg
               leading-relaxed
-              text-white/80
+              text-black/80
+              dark:text-white/80
+              md:text-white/80
             "
           >
             Turning ideas into interfaces people want to use.
@@ -156,7 +203,6 @@ useEffect(() => {
               max-w-lg
               text-lg
               leading-relaxed
-              text-white
               flex
               items-center
             "
@@ -196,22 +242,21 @@ useEffect(() => {
 
 
         <button
-          onClick={() => scrollToSection("footer")}
+          onClick={() => scrollToSection("about")}
           className="
             absolute
             bottom-6
             right-8
             z-30
-            hidden
+            flex
             flex-col
             items-center
             gap-2
             animate-pulse
             [animation-duration:3s]
-            text-xs
+            text-[10px]
+            md:text-xs
             tracking-[0.2em]
-            text-white
-            md:flex
           "
         >
           <span>SCROLL</span>

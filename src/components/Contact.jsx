@@ -153,7 +153,7 @@ function Contact() {
                 dark:text-white/[0.035]
               "
             >
-              06
+              05
             </span>
 
 
@@ -404,7 +404,7 @@ function Contact() {
                   </p>
 
                   <p className="mt-1 text-sm sm:text-base">
-                    github.com/YOUR_USERNAME
+                    github.com/shivamchaudhary19
                   </p>
 
                 </div>
@@ -485,7 +485,7 @@ function Contact() {
                   </p>
 
                   <p className="mt-1 text-sm sm:text-base">
-                    linkedin.com/in/YOUR_USERNAME
+                    linkedin.com/in/shivam-chaudhary-0101843ab
                   </p>
 
                 </div>

@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FiArrowUp } from "react-icons/fi";
 
 function BackToTop() {
   const [visible, setVisible] = useState(false);
+  const animationRef = useRef(null);
+
+  // SHOW / HIDE BUTTON
 
   useEffect(() => {
     const handleScroll = () => {
       setVisible(window.scrollY > 500);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     handleScroll();
 
@@ -18,12 +23,91 @@ function BackToTop() {
     };
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  // STOP CUSTOM SCROLL
+
+  const stopScroll = () => {
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+      animationRef.current = null;
+    }
   };
+
+  // STOP IF USER INTERACTS
+
+  useEffect(() => {
+    const stop = () => {
+      stopScroll();
+    };
+
+    window.addEventListener("wheel", stop, {
+      passive: true,
+    });
+
+    window.addEventListener("touchstart", stop, {
+      passive: true,
+    });
+
+    window.addEventListener("pointerdown", stop);
+
+    window.addEventListener("keydown", stop);
+
+    return () => {
+      window.removeEventListener("wheel", stop);
+      window.removeEventListener("touchstart", stop);
+      window.removeEventListener("pointerdown", stop);
+      window.removeEventListener("keydown", stop);
+    };
+  }, []);
+
+  // CUSTOM SCROLL TO TOP
+
+  const scrollToTop = () => {
+    stopScroll();
+
+    const start = window.scrollY;
+    const startTime = performance.now();
+
+    // Speed control
+    const duration = 900;
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+
+      const progress = Math.min(
+        elapsed / duration,
+        1
+      );
+
+      // Ease-out cubic
+      const ease =
+        1 - Math.pow(1 - progress, 3);
+
+      const currentPosition =
+        start * (1 - ease);
+
+      window.scrollTo(0, currentPosition);
+
+      if (progress < 1) {
+        animationRef.current =
+          requestAnimationFrame(animate);
+      } else {
+        animationRef.current = null;
+      }
+    };
+
+    animationRef.current =
+      requestAnimationFrame(animate);
+  };
+
+  // CLEANUP
+
+  useEffect(() => {
+    return () => {
+      stopScroll();
+    };
+  }, []);
+
+  // UI
 
   return (
     <button
@@ -35,11 +119,13 @@ function BackToTop() {
         bottom-6
         right-6
         z-50
+
         flex
         h-12
         w-12
         items-center
         justify-center
+
         border
         border-black/25
         bg-white
@@ -64,7 +150,15 @@ function BackToTop() {
         }
       `}
     >
-      <FiArrowUp className="h-5 w-5" />
+      <FiArrowUp
+        className="
+          h-5
+          w-5
+          transition-transform
+          duration-300
+          group-hover:-translate-y-0.5
+        "
+      />
     </button>
   );
 }
