@@ -1,0 +1,66 @@
+{
+  "organizationId": "6a76934100033ccae82a",
+  "projectId": "6a819bc4000c6d353559",
+  "projectName": "shivam-portfolio",
+  "endpoint": "https://sgp.cloud.appwrite.io/v1",
+
+  "functions": [
+    {
+      "$id": "6a81b8c00012b1c26257",
+      "name": "send-contact-email",
+      "runtime": "node-26",
+      "enabled": true,
+      "logging": true,
+      "entrypoint": "index.js",
+      "commands": "npm install",
+      "path": "functions/send-contact-email",
+      "execute": ["any"],
+      "scopes": ["users.read"]
+    }
+  ],
+
+  "settings": {
+    "services": {
+      "account": true,
+      "avatars": true,
+      "databases": true,
+      "locale": true,
+      "health": true,
+      "storage": true,
+      "teams": true,
+      "users": true,
+      "sites": true,
+      "functions": true,
+      "graphql": true,
+      "messaging": true
+    },
+
+    "protocols": {
+      "rest": true,
+      "graphql": true,
+      "websocket": true
+    },
+
+    "auth": {
+      "methods": {
+        "jwt": true,
+        "phone": true,
+        "invites": true,
+        "anonymous": true,
+        "email-otp": true,
+        "magic-url": true,
+        "email-password": true
+      },
+      "security": {
+        "duration": 31536000,
+        "limit": null,
+        "sessionsLimit": 10,
+        "passwordHistory": null,
+        "passwordDictionary": false,
+        "personalDataCheck": false,
+        "sessionAlerts": false,
+        "mockNumbers": []
+      }
+    }
+  }
+}
