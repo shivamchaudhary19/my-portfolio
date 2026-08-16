@@ -195,7 +195,7 @@ function Projects() {
                 transition-transform
                 duration-500
                 ease-[cubic-bezier(0.76,0,0.24,1)]
-                group-hover:-translate-y-full
+                group-hover:-translate-y-[175%]
               "
             >
               VIEW ALL PROJECTS ↗
@@ -212,7 +212,7 @@ function Projects() {
                 transition-transform
                 duration-500
                 ease-[cubic-bezier(0.76,0,0.24,1)]
-                group-hover:-translate-y-full
+                group-hover:-translate-y-[175%]
               "
             >
               VIEW ALL PROJECTS ↗

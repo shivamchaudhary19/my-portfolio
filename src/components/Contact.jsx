@@ -744,117 +744,45 @@ function Contact() {
                 {/* Normal text */}
 
                 <span
-                  className="
-                    flex
-                    items-center
-                    gap-3
-                    transition-transform
-                    duration-500
-                    ease-[cubic-bezier(0.76,0,0.24,1)]
-
-                    group-hover:-translate-y-full
-                  "
-                >
-                  {status === "sending"
-                    ? "SENDING..."
-                    : "SEND MESSAGE"}
-
-                  {status !== "sending" && (
-                    <FiSend className="h-4 w-4" />
-                  )}
-                </span>
-
-
-                {/* Hover text */}
-
-                {status !== "sending" && (
-                  <span
                     className="
                       absolute
-                      left-0
-                      top-full
+                      inset-0
                       flex
-                      w-full
                       items-center
                       justify-center
                       gap-3
                       transition-transform
                       duration-500
                       ease-[cubic-bezier(0.76,0,0.24,1)]
-
                       group-hover:-translate-y-full
+                    "
+                  >
+                    SEND MESSAGE
+                    <FiSend className="h-4 w-4" />
+                  </span>
+
+                  <span
+                    className="
+                      absolute
+                      inset-0
+                      flex
+                      items-center
+                      justify-center
+                      gap-3
+                      translate-y-full
+                      transition-transform
+                      duration-500
+                      ease-[cubic-bezier(0.76,0,0.24,1)]
+                      group-hover:translate-y-0
                     "
                   >
                     LET'S GO
                     <FiArrowUpRight className="h-4 w-4" />
                   </span>
-                )}
 
               </button>
 
             </form>
-
-          </div>
-
-        </div>
-
-
-        {/* BOTTOM */}
-
-        <div
-          className="
-            mt-16
-            border-t
-            border-black/15
-            pt-6
-
-            dark:border-white/15
-          "
-        >
-
-          <div
-            className="
-              flex
-              flex-col
-              gap-4
-              text-xs
-              tracking-[0.12em]
-              text-black/45
-
-              sm:flex-row
-              sm:items-center
-              sm:justify-between
-
-              dark:text-white/45
-            "
-          >
-
-            <span>
-              © {new Date().getFullYear()} SHIVAM CHAUDHARY
-            </span>
-
-            <button
-              type="button"
-              onClick={() =>
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                })
-              }
-              className="
-                flex
-                items-center
-                gap-2
-                transition-colors
-                duration-300
-                hover:text-black
-
-                dark:hover:text-white
-              "
-            >
-              BACK TO TOP
-              <span className="text-base">↑</span>
-            </button>
 
           </div>
 

@@ -8,6 +8,7 @@ import Contact from './components/Contact'
 import ThemeBtn from './components/ThemeBtn'
 import Hero from './components/Hero'
 import Journey from './components/Journey'
+import BackToTop from "./components/BackToTop";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Journey />
       <Contact />
       <Footer />
+      <BackToTop />
     </>
   )
 }
