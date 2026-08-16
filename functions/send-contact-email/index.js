@@ -2,6 +2,7 @@ import { Resend } from "resend";
 
 export default async ({ req, res, log, error }) => {
   try {
+
     // Only allow POST requests
     if (req.method !== "POST") {
       return res.json(
@@ -14,7 +15,7 @@ export default async ({ req, res, log, error }) => {
     }
 
     // Get form data
-    const { name, email, message } = JSON.parse(req.body || "{}");
+    const { name, email, message } = req.bodyJson;
 
     // Validate form data
     if (!name || !email || !message) {
