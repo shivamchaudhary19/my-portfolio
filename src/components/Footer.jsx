@@ -32,6 +32,7 @@ function Footer() {
 
   return (
     <footer
+      id = "footer"
       className="
         relative
         border-t
