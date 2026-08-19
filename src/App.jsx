@@ -9,19 +9,23 @@ import ThemeBtn from './components/ThemeBtn'
 import Hero from './components/Hero'
 import Journey from './components/Journey'
 import BackToTop from "./components/BackToTop";
+import CursorFlow from "./components/CursorFlow";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Journey />
-      <Contact />
-      <Footer />
-      <BackToTop />
+
+      <CursorFlow>
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Journey />
+        <Contact />
+        <Footer />
+        <BackToTop />
+      </CursorFlow>
     </>
   )
 }
