@@ -76,6 +76,7 @@ function Hero() {
         ref={heroContentRef}
         className="
           flex
+          relative
           flex-col
           items-start
           gap-10
@@ -369,16 +370,17 @@ function Hero() {
 
         </div>
 
-
         {/* SCROLL BUTTON */}
 
         <button
           onClick={() => scrollToSection("contact")}
+          aria-label="Scroll to Contact section"
           className="
             absolute
             bottom-6
-            right-8
-            z-30
+            right-5
+
+            z-[60]
 
             flex
             flex-col
@@ -389,24 +391,37 @@ function Hero() {
             [animation-duration:3s]
 
             text-[10px]
-            md:text-xs
-
             tracking-[0.2em]
 
             text-black
 
+            transition-colors
+            duration-300
+
+            hover:text-black/60
+
             dark:text-white
+            dark:hover:text-white/60
+
+            sm:right-8
+            md:bottom-6
+            md:text-xs
           "
         >
-
           <span>
             SCROLL
           </span>
 
-          <span className="text-lg">
+          <span
+            className="
+              text-lg
+              transition-transform
+              duration-300
+              group-hover:translate-y-1
+            "
+          >
             ↓
           </span>
-
         </button>
 
       </div>

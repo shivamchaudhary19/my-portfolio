@@ -1,9 +1,11 @@
 import React from "react";
 import Me from "../assets/Me.png";
 import ImageSlideshow from "./ImageSlideshow";
-import Me1 from "../assets/Me1.jpeg";
-import Me2 from "../assets/Me2.jpeg";
-import Me3 from "../assets/Me3.jpeg";
+import Me1 from "../assets/Me1.png";
+import Me2 from "../assets/Me2.png";
+import Me3 from "../assets/Me3.png";
+import Me4 from "../assets/Me4.png";
+import Me5 from "../assets/Me5.png";
 
 function About() {
   return (
@@ -355,7 +357,7 @@ function About() {
               >
 
                 <ImageSlideshow
-                  images={[Me, Me1, Me2, Me3]}
+                  images={[Me, Me1, Me2, Me3, Me4, Me5]}
                   interval={3000}
                 />
 

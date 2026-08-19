@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ThemeBtn from "./ThemeBtn";
+import { scrollToSection } from "../utils/smoothScroll";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -87,6 +88,10 @@ function Navbar() {
         >
           <a
             href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("home");
+            }}
             className="
               transition-colors
               duration-300
@@ -101,6 +106,10 @@ function Navbar() {
 
           <a
             href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("about");
+            }}
             className="
               transition-colors
               duration-300
@@ -115,6 +124,10 @@ function Navbar() {
 
           <a
             href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("projects");
+            }}
             className="
               transition-colors
               duration-300
@@ -129,6 +142,10 @@ function Navbar() {
 
           <a
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("contact");
+            }}
             className="
               transition-colors
               duration-300
@@ -160,33 +177,35 @@ function Navbar() {
 
           {/* Resume */}
 
-          <button
-            type="button"
-            className="
-              hidden
-              border
-              border-black/20
-              px-4
-              py-2
-              text-sm
-              dark:text-white
-              transition-all
-              duration-300
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            hidden
+            border
+            border-black/20
+            px-4
+            py-2
+            text-sm
 
-              hover:border-black
-              hover:bg-black
-              hover:text-white
+            transition-all
+            duration-300
 
-              dark:border-white/25
-              dark:hover:border-white
-              dark:hover:bg-white
-              dark:hover:text-black
+            hover:border-black
+            hover:bg-black
+            hover:text-white
+            dark:text-white
+            dark:border-white/25
+            dark:hover:border-white
+            dark:hover:bg-white
+            dark:hover:text-black
 
-              md:block
-            "
-          >
-            Resume
-          </button>
+            md:block
+          "
+        >
+          RESUME ↗
+        </a>
 
 
           {/* MOBILE MENU BUTTON */}
