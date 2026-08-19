@@ -149,7 +149,7 @@ function Contact() {
                 text-black/[0.035]
 
                 sm:text-[12rem]
-
+                lg:text-[20rem]
                 dark:text-white/[0.035]
               "
             >

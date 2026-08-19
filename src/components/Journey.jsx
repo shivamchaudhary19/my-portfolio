@@ -129,7 +129,7 @@ function Journey() {
               sm:text-[14rem]
 
               lg:top-[-3rem]
-              lg:text-[17rem]
+              lg:text-[20rem]
 
               dark:text-white/[0.035]
             "

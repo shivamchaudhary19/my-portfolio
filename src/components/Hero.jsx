@@ -60,7 +60,7 @@ function Hero() {
       id="home"
       className="
         relative
-        min-h-screen
+        min-h-[calc(100vh-4rem)]
         md:h-[calc(100vh-4rem)]
         overflow-hidden
 

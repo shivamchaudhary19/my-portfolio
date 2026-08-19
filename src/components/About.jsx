@@ -115,7 +115,7 @@ function About() {
                 sm:text-[14rem]
                 lg:-right-8
                 lg:-top-20
-                lg:text-[17rem]
+                lg:text-[20rem]
 
                 dark:text-white/[0.035]
               "

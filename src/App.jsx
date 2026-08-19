@@ -1,17 +1,21 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import About from './components/About'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-import Contact from './components/Contact'
-import ThemeBtn from './components/ThemeBtn'
-import Hero from './components/Hero'
-import Journey from './components/Journey'
-import BackToTop from "./components/BackToTop";
-import CursorFlow from "./components/CursorFlow";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+import Navbar from "./components/Navbar";
+import CursorFlow from "./components/CursorFlow";
+import BackToTop from "./components/BackToTop";
+
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Journey from "./components/Journey";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
+import ProjectsPage from "./pages/ProjectsPage";
+
+function Home() {
   return (
     <>
       <Navbar />
@@ -27,7 +31,18 @@ function App() {
         <BackToTop />
       </CursorFlow>
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;

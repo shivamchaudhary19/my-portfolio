@@ -3,10 +3,10 @@ import WeatherImg from "../assets/weather.png";
 import NoisyImg from "../assets/noisy.png";
 import VeloraImg from "../assets/velora.png";
 import PortfolioImg from "../assets/portfolio.png";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {
-    number: "01",
     name: "WEATHER",
     image: WeatherImg,
     type: "APP",
@@ -14,13 +14,11 @@ const projects = [
     tech: "JAVASCRIPT · API",
     live: "https://shivamchaudhary19.github.io/weather-app/",
     github: "https://github.com/shivamchaudhary19/weather-app",
-
     grid:
       "md:col-start-1 md:row-start-1 md:row-span-2 lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-1",
   },
 
   {
-    number: "02",
     name: "NOISY",
     image: NoisyImg,
     type: "HEADPHONES",
@@ -28,13 +26,11 @@ const projects = [
     tech: "HTML · CSS · JAVASCRIPT",
     live: "https://noisy-eight.vercel.app/",
     github: "https://github.com/shivamchaudhary19/noisy-headphones",
-
     grid:
       "md:col-start-2 md:row-start-1 lg:col-start-3 lg:row-start-1",
   },
 
   {
-    number: "03",
     name: "VELORA",
     image: VeloraImg,
     type: "SNEAKERS",
@@ -42,27 +38,26 @@ const projects = [
     tech: "HTML · CSS · JAVASCRIPT",
     live: "https://shivamchaudhary19.github.io/sneakers-landing-page/",
     github: "https://github.com/shivamchaudhary19/sneakers-landing-page",
-
     grid:
       "md:col-start-3 md:row-start-1 lg:col-start-1 lg:row-start-2",
   },
 
   {
-    number: "04",
     name: "SHIVAM",
     image: PortfolioImg,
     type: "PORTFOLIO",
     tagline: "THE SITE YOU'RE STANDING ON.",
     tech: "REACT · TAILWIND CSS",
-    live: null,
+    live: "https://shivam-chaudhary.vercel.app/",
     github: "https://github.com/shivamchaudhary19/my-portfolio",
-
     grid:
       "md:col-start-2 md:col-span-2 md:row-start-2 lg:col-start-2 lg:col-span-2 lg:row-start-2",
   },
 ];
 
 function Projects() {
+  const navigate = useNavigate();
+
   return (
     <section
       id="projects"
@@ -73,14 +68,48 @@ function Projects() {
         px-6
         py-28
         text-black
+
         sm:px-10
         lg:px-16
+
         dark:bg-black
         dark:text-white
       "
     >
-      <div className="mx-auto max-w-[1400px]">
+      {/* SECTION NUMBER */}
 
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          right-6
+          top-10
+          z-0
+
+          select-none
+
+          font-display
+          text-[12rem]
+          font-black
+          leading-none
+
+          text-black/[0.04]
+
+          sm:right-10
+          sm:text-[16rem]
+
+          lg:right-16
+          lg:top-6
+          lg:text-[20rem]
+
+          dark:text-white/[0.045]
+        "
+      >
+        02
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1400px]">
         {/* SECTION HEADER */}
 
         <div className="mb-16">
@@ -113,6 +142,7 @@ function Projects() {
               flex
               flex-col
               gap-8
+
               md:flex-row
               md:items-end
               md:justify-between
@@ -153,15 +183,17 @@ function Projects() {
             grid
             grid-cols-1
             gap-5
+
             md:grid-cols-3
             md:grid-rows-[360px_360px]
+
             lg:grid-cols-3
             lg:grid-rows-[360px_360px]
           "
         >
           {projects.map((project) => (
             <ProjectCard
-              key={project.number}
+              key={project.name}
               project={project}
             />
           ))}
@@ -172,6 +204,7 @@ function Projects() {
         <div className="mt-20 flex justify-center">
           <button
             type="button"
+            onClick={() => navigate("/projects")}
             className="
               group
               relative
@@ -182,9 +215,12 @@ function Projects() {
               py-4
               text-sm
               tracking-[0.2em]
+
               transition-all
               duration-300
+
               hover:border-black
+
               dark:border-white/25
               dark:hover:border-white
             "
@@ -224,9 +260,6 @@ function Projects() {
   );
 }
 
-
-/* PROJECT CARD */
-
 function ProjectCard({ project }) {
   return (
     <article
@@ -244,19 +277,23 @@ function ProjectCard({ project }) {
           min-h-0
           flex-col
           overflow-hidden
+
           border
           border-black/15
           bg-white
+
           transition-all
           duration-500
+
           group-hover:border-black/40
+
           dark:border-white/15
           dark:bg-[#080808]
           dark:group-hover:border-white/40
+
           md:h-full
         "
       >
-
         {/* VISUAL AREA */}
 
         <div
@@ -266,6 +303,7 @@ function ProjectCard({ project }) {
             w-full
             shrink-0
             overflow-hidden
+
             bg-black/[0.02]
             dark:bg-white/[0.02]
 
@@ -292,48 +330,30 @@ function ProjectCard({ project }) {
                 h-full
                 w-full
                 object-cover
+
                 transition-transform
                 duration-700
                 ease-out
+
                 group-hover:scale-105
               "
             />
-
-            {/* Overlay */}
 
             <div
               className="
                 absolute
                 inset-0
                 bg-black/20
+
                 transition-opacity
                 duration-500
+
                 group-hover:bg-black/10
+
                 dark:bg-black/30
               "
             />
           </div>
-
-
-          {/* PROJECT NUMBER */}
-
-          <span
-            className="
-              absolute
-              left-5
-              top-5
-              z-20
-              font-display
-              text-sm
-              font-bold
-              tracking-wider
-              text-black/60
-              dark:text-white/70
-            "
-          >
-            {project.number}
-          </span>
-
 
           {/* LIVE PROJECT ARROW */}
 
@@ -348,23 +368,30 @@ function ProjectCard({ project }) {
                 right-5
                 top-5
                 z-20
+
                 flex
                 h-10
                 w-10
                 items-center
                 justify-center
+
                 rounded-full
                 border
                 border-black/20
+
                 text-lg
                 text-black/60
+
                 transition-all
                 duration-300
+
                 hover:border-black
                 hover:bg-black
                 hover:text-white
+
                 dark:border-white/20
                 dark:text-white/70
+
                 dark:hover:border-white
                 dark:hover:bg-white
                 dark:hover:text-black
@@ -374,7 +401,6 @@ function ProjectCard({ project }) {
             </a>
           )}
 
-
           {/* PROJECT TYPE */}
 
           <span
@@ -383,6 +409,7 @@ function ProjectCard({ project }) {
               bottom-5
               left-5
               z-20
+
               text-[9px]
               tracking-[0.35em]
               text-white/80
@@ -391,7 +418,6 @@ function ProjectCard({ project }) {
             {project.type}
           </span>
         </div>
-
 
         {/* PROJECT INFORMATION */}
 
@@ -409,6 +435,7 @@ function ProjectCard({ project }) {
               flex
               flex-col
               gap-3
+
               sm:flex-row
               sm:items-start
               sm:justify-between
@@ -437,6 +464,7 @@ function ProjectCard({ project }) {
                   uppercase
                   leading-none
                   tracking-wide
+
                   text-black/35
                   dark:text-white/35
                 "
@@ -457,7 +485,6 @@ function ProjectCard({ project }) {
             </span>
           </div>
 
-
           {/* TAGLINE */}
 
           <p
@@ -466,13 +493,13 @@ function ProjectCard({ project }) {
               text-sm
               font-semibold
               tracking-wide
+
               text-black/75
               dark:text-white/80
             "
           >
             {project.tagline}
           </p>
-
 
           {/* LINKS */}
 
@@ -493,10 +520,14 @@ function ProjectCard({ project }) {
                   text-[10px]
                   font-bold
                   tracking-[0.2em]
+
                   text-black/55
+
                   transition-colors
                   duration-300
+
                   hover:text-black
+
                   dark:text-white/60
                   dark:hover:text-white
                 "
@@ -509,6 +540,7 @@ function ProjectCard({ project }) {
                   text-[10px]
                   font-bold
                   tracking-[0.2em]
+
                   text-black/30
                   dark:text-white/30
                 "
@@ -525,10 +557,14 @@ function ProjectCard({ project }) {
                 text-[10px]
                 font-bold
                 tracking-[0.2em]
+
                 text-black/55
+
                 transition-colors
                 duration-300
+
                 hover:text-black
+
                 dark:text-white/60
                 dark:hover:text-white
               "
@@ -537,7 +573,6 @@ function ProjectCard({ project }) {
             </a>
           </div>
         </div>
-
       </div>
     </article>
   );
