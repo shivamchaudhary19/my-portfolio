@@ -392,8 +392,7 @@ function Hero() {
 
             text-[10px]
             tracking-[0.2em]
-
-            text-black
+            text-white
 
             transition-colors
             duration-300
