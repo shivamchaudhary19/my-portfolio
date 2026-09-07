@@ -61,6 +61,7 @@ function Hero() {
       className="
         relative
         min-h-[calc(100vh-4rem)]
+        md:min-h-[700px]
         md:h-[calc(100vh-4rem)]
         overflow-hidden
 
@@ -71,7 +72,6 @@ function Hero() {
         dark:text-white
       "
     >
-
       <div
         ref={heroContentRef}
         className="
@@ -92,28 +92,22 @@ function Hero() {
           md:gap-0
         "
       >
-
         {/* SHIVAM */}
 
         <h1
           className="
-            order-1
-
             md:absolute
             md:top-[8%]
-            md:left-1/2
-            md:-translate-x-1/2
+            md:left-[10%]
 
             z-10
 
             font-display
-            tracking-[0.05em]
-            md:tracking-widest
-
+            tracking-widest
             whitespace-nowrap
 
             text-[clamp(5rem,27vw,7rem)]
-            md:text-[clamp(8rem,23vw,24rem)]
+            md:text-[clamp(10rem,23vw,24rem)]
 
             font-black
             leading-none
@@ -132,7 +126,6 @@ function Hero() {
           SHIVAM
         </h1>
 
-
         {/* IMAGE WRAPPER */}
 
         <div
@@ -149,7 +142,6 @@ function Hero() {
             md:z-40
           "
         >
-
           {/* MOBILE IMAGE */}
 
           <div
@@ -162,7 +154,6 @@ function Hero() {
               md:hidden
             "
           >
-
             <img
               src={Me}
               alt="Shivam Chaudhary"
@@ -192,9 +183,7 @@ function Hero() {
                 to-transparent
               "
             />
-
           </div>
-
 
           {/* DESKTOP IMAGE */}
 
@@ -221,9 +210,7 @@ function Hero() {
               md:z-40
             "
           />
-
         </div>
-
 
         {/* CHAUDHARY */}
 
@@ -255,7 +242,6 @@ function Hero() {
           CHAUDHARY
         </h2>
 
-
         {/* INTRO CONTENT */}
 
         <div
@@ -272,7 +258,6 @@ function Hero() {
             max-w-xl
           "
         >
-
           <h3
             className="
               text-xl
@@ -282,7 +267,6 @@ function Hero() {
           >
             MAKE. BREAK. IMPROVE.
           </h3>
-
 
           <p
             className="
@@ -298,7 +282,6 @@ function Hero() {
           >
             Turning ideas into interfaces people want to use.
           </p>
-
 
           {/* VIEW MY WORK */}
 
@@ -318,11 +301,9 @@ function Hero() {
               dark:text-white
             "
           >
-
             <span className="mr-2">
               [
             </span>
-
 
             <span
               className="
@@ -332,7 +313,6 @@ function Hero() {
                 overflow-hidden
               "
             >
-
               <span
                 className="
                   block
@@ -343,7 +323,6 @@ function Hero() {
               >
                 VIEW MY WORK
               </span>
-
 
               <span
                 className="
@@ -358,16 +337,12 @@ function Hero() {
               >
                 VIEW MY WORK
               </span>
-
             </span>
-
 
             <span className="ml-2">
               ]
             </span>
-
           </button>
-
         </div>
 
         {/* SCROLL BUTTON */}
@@ -422,10 +397,10 @@ function Hero() {
             ↓
           </span>
         </button>
-
       </div>
     </section>
   );
 }
 
 export default Hero;
+
