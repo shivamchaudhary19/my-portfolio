@@ -92,7 +92,7 @@ function Navbar() {
               e.preventDefault();
               scrollToSection("home", 500);
             }}
-            className="
+            className="4
               transition-colors
               duration-300
 
