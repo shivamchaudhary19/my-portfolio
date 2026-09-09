@@ -90,7 +90,7 @@ function Navbar() {
             href="#home"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection("home");
+              scrollToSection("home", 500);
             }}
             className="
               transition-colors
